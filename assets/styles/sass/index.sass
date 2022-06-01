@@ -1,0 +1,277 @@
+@import vars
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body 
+    font-family: $font-family
+    font-size: $font-size
+    line-height: $line-height
+    width: 100%
+    height: 100vh
+    overflow: hidden
+
+a 
+    text-decoration: none
+    color: $font-color
+ul li
+    list-style: none
+
+input, textarea, button
+    outline: none
+    background: none
+    border: none
+    display: block
+
+img
+    width: auto
+    height: 100%
+
+.app
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    position: relative
+    .slider,
+    .slider
+        background-image: url("./../../img/gallery/min/1.jpg")
+        &::after
+            position: fixed
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            z-index: 0
+            content: ''
+            // background: transparent url(./../../img/gallery/pattern.png) repeat top left 
+        li 
+            span 
+                width: 100%
+                height: 100%
+                position: absolute
+                top: 0px
+                left: 0px
+                color: transparent
+                background-size: cover
+                background-position: 50% 50%
+                background-repeat: none
+                opacity: 0
+                z-index: 0
+                animation: imageAnimation 48s linear infinite 1s
+            &:nth-child(1) span 
+                background-image: url(./../../img/gallery/min/1.jpg) 
+            &:nth-child(2) span 
+                background-image: url(./../../img/gallery/min/2.jpg)
+                animation-delay: 6s 
+            &:nth-child(3) span 
+                background-image: url(./../../img/gallery/min/3.jpg)
+                animation-delay: 12s
+            &:nth-child(4) span 
+                background-image: url(./../../img/gallery/min/4.jpg)
+                animation-delay: 18s 
+            &:nth-child(5) span 
+                background-image: url(./../../img/gallery/min/5.jpg)
+                animation-delay: 24s
+            &:nth-child(6) span 
+                background-image: url(./../../img/gallery/min/6.jpg)
+                animation-delay: 30s
+            &:nth-child(7) span 
+                background-image: url(./../../img/gallery/min/7.jpg)
+                animation-delay: 36s
+            &:nth-child(8) span 
+                background-image: url(./../../img/gallery/min/8.jpg)
+                animation-delay: 42s
+
+        @keyframes imageAnimation 
+            0% 
+                opacity: 0
+                animation-timing-function: ease-in
+            8% 
+                opacity: 1
+                animation-timing-function: ease-out
+            17%  
+                opacity: 1
+            25% 
+                opacity: 0
+            100% 
+                opacity: 0
+    
+    // Logo
+    .logo
+        height: 100%
+        display: flex
+        align-items: center
+        img
+            height: 70%
+        &-text
+            display: flex
+            flex-direction: column
+            font-family: $font-family-bold
+            font-size: 16px
+            line-height: 18px
+            span
+                text-shadow: $text-shadow
+                &:nth-child(1)
+                    color: $red-color 
+    // Header
+    .header
+        height: 80px
+        padding: 0 25px
+        display: flex
+        z-index: 1
+        background: rgba(#fff, .8)
+        .nav
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+            flex-grow: 1
+            font-size: 18px
+            &-item
+                display: flex
+                align-items: center
+                padding: 0 15px
+                .active
+                    color: $orange-color
+                    text-shadow: $orange-text-shadow
+                a
+                    transition: .5s
+                    text-shadow: $text-shadow
+                    &:hover
+                        font-size: 20px
+                        color: $orange-color
+                        text-shadow: $orange-text-shadow
+                        
+        .auth
+            height: 100%
+            display: flex
+            &-item
+                display: flex
+                align-items: center
+                justify-content: center
+                width: 100px
+                a
+                    transition: .5s
+                    text-shadow: $text-shadow
+                    &:hover
+                        font-size: 18px
+                        color: $orange-color
+                        text-shadow: $orange-text-shadow
+                // &:last-child
+                //     font-size: 24px
+                //     width: 200px
+                //     display: flex
+                //     align-items: center
+                //     justify-content: flex-end
+                //     padding: 0 25px
+
+    .main
+        height: calc( 100vh - 160px )
+        position: relative
+        .wrapper
+            width: 100%
+            height: 100%
+            background: rgba(#fff, .5)
+            position: relative
+            z-index: 1
+            .content
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -65%)
+                max-width: 700px
+                &-header
+                    text-align: center
+                    height: 200px
+                &-body
+                    text-shadow: $text-shadow
+                    padding: 20px
+                    font-size: 24px
+                    line-height: 28px
+                    text-align: center
+                &-footer
+                    width: 100%
+                    height: auto
+                    .form
+                        display: flex
+                        justify-content: center
+                        margin-top: 20px
+                        .input
+                            height: 54px
+                            max-width: 450px
+                            width: 100%
+                            position: relative
+                            display: flex
+                            align-items: center
+                            i
+                                position: absolute
+                                left: 15px
+                                font-size: 18px
+                                color: rgba($font-color, .7 )
+                            input
+                                width: 100%
+                                height: 100%
+                                display: flex
+                                border: 1px solid rgba($font-color, .5)
+                                border-right: none
+                                border-radius: 10px 0px 0px 10px
+                                padding: 0 15px 0 48px
+                                background: rgba(#fff, .5)
+                                &:hover
+                                    transition: .5s
+                                    border: 1px solid rgba($orange-color, .5)
+                                &:focus
+                                    border: 1px solid rgba($orange-color, .5)
+                                    
+                        button
+                            width: 100px
+                            border: 1px solid rgba($font-color, .4)
+                            background: $orange-color
+                            border-radius: 0px 10px 10px 0px
+                            font-size: 16px
+                            transition: .5s
+                            &:hover
+                                transition: .5s
+                                background: lighten($orange-color, 10%)
+
+    .footer
+        height: 80px
+        width: 100%
+        padding: 0 25px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-top: auto
+        z-index: 1
+        background: rgba(#fff, .8)
+        .copyright
+            text-shadow: $text-shadow
+            width: 100%
+            text-align: center
+            flex-grow: 1
+        .soc
+            display: flex
+            justify-content: center
+            height: 100%
+            width: auto
+            padding: 0 25px
+            &-item
+                display: flex
+                justify-content: center
+                align-items: center
+                height: 100%
+                font-size: 32px
+                width: 50px
+                a
+                    transition: .5s
+                    i
+                        color: rgba($font-color, .8)
+                        text-shadow: $text-shadow
+                    &:hover
+                        transition: .5s
+                        font-size: 36px
+                        i
+                            color: rgba($font-color, 1)
