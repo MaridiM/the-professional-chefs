@@ -1,0 +1,40 @@
+.slider
+    &::after
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 0
+        // content: ''
+        // background: transparent url(./../../img/gallery/pattern.png) repeat top left 
+        opacity: .2
+    .slide
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0px
+        left: 0px
+        color: transparent
+        background-size: cover
+        background-position: 50% 50%
+        background-repeat: no-repeat
+        opacity: 0
+        z-index: 0
+        animation: imageAnimation linear infinite 1s
+
+    @keyframes imageAnimation 
+        0% 
+            opacity: 0
+            animation-timing-function: ease-in
+            transform: scale(1)
+        10% 
+            opacity: .2
+            animation-timing-function: ease-out
+        20%  
+            opacity: .2
+            transform: scale(1.1)
+        30% 
+            opacity: 0
+        100% 
+            opacity: 0
